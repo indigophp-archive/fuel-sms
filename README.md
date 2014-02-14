@@ -1,6 +1,6 @@
 # Fuel Sms
 
-This package is a wrapper around [indigophp/sms](https://github.com/indigophp/sms) package.
+**This package is a wrapper around [indigophp/sms](https://github.com/indigophp/sms) package.**
 
 
 ## Install
@@ -15,9 +15,21 @@ Via Composer
 }
 ```
 
+
 ## Usage
 
-1.Update your `config/sms.php`
+``` php
+\Sms::forge('default');
+```
+
+Send message from `oil`
+
+``` bash
+$ oil r sms --gateway=gateway number "message"
+```
+
+
+## Configuration
 
 ``` php
 /**
@@ -35,17 +47,6 @@ Via Composer
 ),
 ```
 
-2.Create gateway instance
-
-``` php
-\Sms::forge('default');
-```
-
-3.Send message from `oil`
-
-``` bash
-oil r sms --gateway=gateway number "message"
-```
 
 ## Credits
 
