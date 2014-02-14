@@ -41,7 +41,8 @@ class Sms
 	 */
 	public static function forge($gateway = null, GatewayInterface $instance = null)
 	{
-		if (is_null($instance)) {
+		if (is_null($instance))
+		{
 			is_null($gateway) and $gateway = \Config::get('sms.default');
 			$instance = \Config::get('sms.gateway.' . $gateway);
 
