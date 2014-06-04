@@ -13,9 +13,24 @@
 	],
 	"require": {
 		"composer/installers": "~1.0",
+		"indigophp/fuel-core": "dev-develop",
 		"indigophp/sms": "self.version"
+	},
+	"require-dev": {
+		"mockery/mockery": "dev-master"
+	},
+	"autoload": {
+		"psr-4": {
+			"Sms\\": "classes/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Sms\\Test\\": "tests/"
+		}
 	},
 	"extra": {
 		"installer-name": "sms"
-	}
+	},
+	"minimum-stability": "dev"
 }
