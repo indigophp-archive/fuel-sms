@@ -1,5 +1,6 @@
 # Indigo Fuel Sms
 
+[![Build Status](https://travis-ci.org/indigophp/fuel-sms.svg?branch=develop)](https://travis-ci.org/indigophp/fuel-sms)
 [![Latest Stable Version](https://poser.pugx.org/indigophp/fuel-sms/v/stable.png)](https://packagist.org/packages/indigophp/fuel-sms)
 [![Total Downloads](https://poser.pugx.org/indigophp/fuel-sms/downloads.png)](https://packagist.org/packages/indigophp/fuel-sms)
 [![License](https://poser.pugx.org/indigophp/fuel-sms/license.png)](https://packagist.org/packages/indigophp/fuel-sms)
