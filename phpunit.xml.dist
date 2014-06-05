@@ -9,7 +9,7 @@
         <server name="FUEL_ENV" value="development"/>
     </php>
     <testsuites>
-        <testsuite name="Indigo Fuel Sms Test Suite">
+        <testsuite name="Indigo Sms Test Suite">
             <directory>tests/</directory>
         </testsuite>
     </testsuites>

@@ -1,4 +1,4 @@
-# Fuel Sms
+# Indigo Fuel Sms
 
 [![Latest Stable Version](https://poser.pugx.org/indigophp/fuel-sms/v/stable.png)](https://packagist.org/packages/indigophp/fuel-sms)
 [![Total Downloads](https://poser.pugx.org/indigophp/fuel-sms/downloads.png)](https://packagist.org/packages/indigophp/fuel-sms)

@@ -1,0 +1,21 @@
+language: php
+php:
+  - 5.4
+  - 5.5
+
+script:
+  - cd /tmp/fuel/fuel/packages/sms/
+  - phpunit -v --coverage-clover=coverage.clover
+
+before_script:
+  - curl get.fuelphp.com/oil | sh
+  - cd /tmp
+  - oil create fuel
+  - cp -r $TRAVIS_BUILD_DIR fuel/fuel/packages/sms/
+  - cd fuel/fuel/packages/sms/
+  - composer install
+  - wget https://scrutinizer-ci.com/ocular.phar
+
+after_script:
+  - cd /tmp/fuel/fuel/packages/sms/
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
