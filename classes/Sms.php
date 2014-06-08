@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Indigo Sms package.
+ * This file is part of the Fuel Sms package.
  *
  * (c) Indigo Development Team
  *
@@ -9,10 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Sms;
+namespace Indigo\Fuel;
 
 use Indigo\Sms\Gateway\GatewayInterface;
 use Indigo\Sms\Message;
+use InvalidArgumentException;
 
 class Sms extends \Forge
 {
@@ -21,24 +22,19 @@ class Sms extends \Forge
 	/**
 	 * {@inheritdocs}
 	 *
-	 * @param  string           $gateway
-	 * @param  GatewayInterface $instance
+	 * @param  string $gateway
 	 * @return GatewayInterface
 	 */
-	public static function forge($gateway = null, GatewayInterface $instance = null)
+	public static function forge($instance = 'default')
 	{
-		if (is_null($instance))
-		{
-			is_null($gateway) and $gateway = \Config::get('sms.default', 'default');
-			$instance = \Config::get('sms.gateway.' . $gateway);
+		$gateway = \Config::get('sms.' . $instance);
 
-			if ( ! $instance instanceof GatewayInterface)
-			{
-				throw new \InvalidArgumentException('Invalid Gateway');
-			}
+		if ($gateway instanceof GatewayInterface === false)
+		{
+			throw new InvalidArgumentException('Invalid Gateway');
 		}
 
-		return static::newInstance($gateway, $instance);
+		return static::newInstance($instance, $gateway);
 	}
 
 	/**

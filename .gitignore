@@ -1,5 +1,4 @@
-/fuel
-phpunit.xml
+/tests/_log
 /vendor
-/coverage
+/fuel
 composer.lock

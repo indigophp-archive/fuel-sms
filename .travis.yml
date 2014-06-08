@@ -5,7 +5,7 @@ php:
 
 script:
   - cd /tmp/fuel/fuel/packages/sms/
-  - phpunit -v --coverage-clover=coverage.clover
+  - vendor/bin/codecept run unit --coverage --xml
 
 before_script:
   - curl get.fuelphp.com/oil | sh
@@ -18,4 +18,4 @@ before_script:
 
 after_script:
   - cd /tmp/fuel/fuel/packages/sms/
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+  - php ocular.phar code-coverage:upload --format=php-clover tests/_log/coverage.xml

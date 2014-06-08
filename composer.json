@@ -17,16 +17,12 @@
         "indigophp/sms": "self.version"
     },
     "require-dev": {
-        "mockery/mockery": "dev-master"
+        "codeception/codeception": "~1.8.0",
+        "codeception/mockery-module": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "Sms\\": "classes/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Sms\\Test\\": "tests/"
+            "Indigo\\Fuel\\": "classes/"
         }
     },
     "extra": {

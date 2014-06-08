@@ -1,38 +1,31 @@
 <?php
 
-namespace Sms\Test;
+namespace Indigo\Fuel;
 
-use Sms\Sms;
+use Codeception\TestCase\Test;
 
 /**
  * Tests for Sms
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  *
- * @coversDefaultClass Sms\Sms
+ * @coversDefaultClass Indigo\Fuel\Sms
  */
-class SmsTest extends \PHPUnit_Framework_TestCase
+class SmsTest extends Test
 {
-	public function tearDown($value='')
+	public function _before()
 	{
-		\Mockery::close();
+		Sms::_init();
+		\Config::set('sms.test', \Mockery::mock('Indigo\\Sms\\Gateway\\GatewayInterface'));
 	}
-
 	/**
 	 * @covers ::forge
 	 * @group  Sms
 	 */
 	public function testForge()
 	{
-		$mock = \Mockery::mock('Indigo\\Sms\\Gateway\\GatewayInterface');
-		\Config::set('sms.gateway.default', $mock);
-
-		$sms = Sms::forge('default');
+		$sms = Sms::forge('test');
 		$this->assertInstanceOf('Indigo\\Sms\\Gateway\\GatewayInterface', $sms);
-		\Config::delete('sms.gateway.default');
-
-		$sms = Sms::forge('test', $mock);
-		$this->assertSame($mock, $sms);
 	}
 
 	/**
@@ -42,7 +35,7 @@ class SmsTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testForgeFailure()
 	{
-		$sms = Sms::forge();
+		$sms = Sms::forge('THIS_SHOULD_NEVER_EXIST');
 	}
 
 	/**

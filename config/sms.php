@@ -19,13 +19,5 @@
  */
 
 return array(
-    /**
-     * Default gateway
-     */
-    'default' => 'default',
 
-    /**
-     * Gateway instances
-     */
-    'gateway' => array(),
 );

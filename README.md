@@ -1,4 +1,4 @@
-# Indigo Fuel Sms
+# Fuel Sms
 
 [![Build Status](https://travis-ci.org/indigophp/fuel-sms.svg?branch=develop)](https://travis-ci.org/indigophp/fuel-sms)
 [![Latest Stable Version](https://poser.pugx.org/indigophp/fuel-sms/v/stable.png)](https://packagist.org/packages/indigophp/fuel-sms)
@@ -37,19 +37,9 @@ $ oil r sms --gateway=gateway number "message"
 ## Configuration
 
 ``` php
-/**
- * Default gateway
- */
-'default' => 'default',
-
-/**
- * Gateway instances
- */
-'gateway' => array(
-    'default' => function () {
-        return new Indigo\Sms\Gateway\SomeGateway;
-    }
-),
+'default' => function () {
+    return new Indigo\Sms\Gateway\SomeGateway;
+}
 ```
 
 
