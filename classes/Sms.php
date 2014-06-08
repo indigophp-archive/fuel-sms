@@ -15,6 +15,11 @@ use Indigo\Sms\Gateway\GatewayInterface;
 use Indigo\Sms\Message;
 use InvalidArgumentException;
 
+/**
+ * Sms Forge class
+ *
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ */
 class Sms extends \Forge
 {
 	protected static $_config = 'sms';

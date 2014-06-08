@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Indigo Sms package.
+ * This file is part of the Fuel Sms package.
  *
  * (c) Indigo Development Team
  *
