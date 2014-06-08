@@ -43,6 +43,13 @@ $ oil r sms --gateway=gateway number "message"
 ```
 
 
+## Testing
+
+``` bash
+$ codecept run
+```
+
+
 ## Credits
 
 - [Márk Sági-Kazár](https://github.com/sagikazarmark)
