@@ -22,6 +22,8 @@ use InvalidArgumentException;
  */
 class Sms extends \Facade
 {
+	use \Indigo\Core\Facade\Instance;
+
 	protected static $_config = 'sms';
 
 	/**
