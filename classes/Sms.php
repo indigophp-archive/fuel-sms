@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Fuel Sms package.
+ * This file is part of the Fuel SMS package.
  *
  * (c) Indigo Development Team
  *
@@ -16,7 +16,7 @@ use Indigo\Sms\Message;
 use InvalidArgumentException;
 
 /**
- * Sms Forge class
+ * Sms Facade class
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
