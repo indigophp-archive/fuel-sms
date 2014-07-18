@@ -1,7 +1,21 @@
 <?php
 
+/*
+ * This file is part of the Fuel SMS package.
+ *
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Fuel\Tasks;
 
+/**
+ * Sms Task
+ *
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ */
 class Sms
 {
 	protected $gateway;
@@ -14,8 +28,6 @@ class Sms
 
 	/**
 	 * Send a message
-	 *
-	 * @param integer $number
 	 */
 	public function run($number, $message, $sender = null)
 	{
@@ -24,6 +36,11 @@ class Sms
 		$this->gateway->send($message);
 	}
 
+	/**
+	 * Get balance
+	 *
+	 * @return float
+	 */
 	public function balance()
 	{
 		return $this->gateway->getBalance();

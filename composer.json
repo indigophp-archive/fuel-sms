@@ -1,21 +1,33 @@
 {
-	"name": "indigophp/fuel-sms",
-	"type": "fuel-package",
-	"description": "Fuel wrapper around Indigo SMS package",
-	"keywords": ["sms", "short-message", "gateway"],
-	"homepage": "https://indigophp.com",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Márk Sági-Kazár",
-			"email": "mark.sagikazar@gmail.com"
-		}
-	],
-	"require": {
-		"composer/installers": "~1.0",
-		"indigophp/sms": "self.version"
-	},
-	"extra": {
-		"installer-name": "sms"
-	}
+    "name": "indigophp/fuel-sms",
+    "type": "fuel-package",
+    "description": "Fuel wrapper around Indigo SMS package",
+    "keywords": ["sms", "short-message", "gateway"],
+    "homepage": "https://indigophp.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Márk Sági-Kazár",
+            "email": "mark.sagikazar@gmail.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "indigophp/fuel-core": "~1.0",
+        "indigophp/sms": "*"
+    },
+    "require-dev": {
+        "indigophp/sms": "dev-develop",
+        "codeception/codeception": "~2.0.0@stable",
+        "codeception/mockery-module": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Indigo\\Fuel\\": "classes/"
+        }
+    },
+    "extra": {
+        "installer-name": "sms"
+    },
+    "minimum-stability": "dev"
 }

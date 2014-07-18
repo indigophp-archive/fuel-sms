@@ -1,6 +1,12 @@
 # Fuel Sms
 
-This package is a wrapper around [indigophp/sms](https://github.com/indigophp/sms) package.
+[![Build Status](https://travis-ci.org/indigophp/fuel-sms.svg?branch=develop)](https://travis-ci.org/indigophp/fuel-sms)
+[![Latest Stable Version](https://poser.pugx.org/indigophp/fuel-sms/v/stable.png)](https://packagist.org/packages/indigophp/fuel-sms)
+[![Total Downloads](https://poser.pugx.org/indigophp/fuel-sms/downloads.png)](https://packagist.org/packages/indigophp/fuel-sms)
+[![License](https://poser.pugx.org/indigophp/fuel-sms/license.png)](https://packagist.org/packages/indigophp/fuel-sms)
+[![Dependency Status](http://www.versioneye.com/user/projects/53c8e3c3b47c3164d100003a/badge.svg?style=flat)](http://www.versioneye.com/user/projects/53c8e3c3b47c3164d100003a)
+
+**This package is a wrapper around [indigophp/sms](https://github.com/indigophp/sms) package.**
 
 
 ## Install
@@ -15,37 +21,35 @@ Via Composer
 }
 ```
 
+
 ## Usage
-
-1.Update your `config/sms.php`
-
-``` php
-/**
- * Default gateway
- */
-'default' => 'default',
-
-/**
- * Gateway instances
- */
-'gateway' => array(
-    'default' => function () {
-        return new Indigo\Sms\Gateway\SomeGateway;
-    }
-),
-```
-
-2.Create gateway instance
 
 ``` php
 \Sms::forge('default');
 ```
 
-3.Send message from `oil`
+Send message from `oil`
 
 ``` bash
-oil r sms --gateway=gateway number "message"
+$ oil r sms --gateway=gateway number "message"
 ```
+
+
+## Configuration
+
+``` php
+'default' => function () {
+    return new Indigo\Sms\Gateway\SomeGateway;
+}
+```
+
+
+## Testing
+
+``` bash
+$ codecept run
+```
+
 
 ## Credits
 

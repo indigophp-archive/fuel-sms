@@ -1,0 +1,16 @@
+language: php
+php:
+  - 5.4
+  - 5.5
+
+script:
+  - cd /tmp/fuel/fuel/packages/sms/
+  - vendor/bin/codecept run
+
+before_script:
+  - curl get.fuelphp.com/oil | sh
+  - cd /tmp
+  - oil create fuel
+  - cp -r $TRAVIS_BUILD_DIR fuel/fuel/packages/sms/
+  - cd fuel/fuel/packages/sms/
+  - composer install --prefer-source
