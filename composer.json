@@ -18,7 +18,7 @@
     },
     "require-dev": {
         "indigophp/sms": "dev-develop",
-        "codeception/codeception": "~2.0.0@stable",
+        "codeception/codeception": "~2.0.0",
         "codeception/mockery-module": "dev-master"
     },
     "autoload": {
@@ -29,5 +29,6 @@
     "extra": {
         "installer-name": "sms"
     },
+    "prefer-stable": true,
     "minimum-stability": "dev"
 }
