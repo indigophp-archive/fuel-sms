@@ -13,11 +13,12 @@
     ],
     "require": {
         "composer/installers": "~1.0",
-        "indigophp/fuel-core": "dev-develop",
-        "indigophp/sms": "self.version"
+        "indigophp/fuel-core": "~1.0",
+        "indigophp/sms": "*"
     },
     "require-dev": {
-        "codeception/codeception": "~1.8.0",
+        "indigophp/sms": "dev-develop",
+        "codeception/codeception": "~2.0.0@stable",
         "codeception/mockery-module": "dev-master"
     },
     "autoload": {

@@ -1,11 +1,12 @@
 language: php
 php:
+  - 5.3
   - 5.4
   - 5.5
 
 script:
   - cd /tmp/fuel/fuel/packages/sms/
-  - vendor/bin/codecept run unit --coverage --xml
+  - vendor/bin/codecept run
 
 before_script:
   - curl get.fuelphp.com/oil | sh
@@ -13,9 +14,4 @@ before_script:
   - oil create fuel
   - cp -r $TRAVIS_BUILD_DIR fuel/fuel/packages/sms/
   - cd fuel/fuel/packages/sms/
-  - composer install
-  - wget https://scrutinizer-ci.com/ocular.phar
-
-after_script:
-  - cd /tmp/fuel/fuel/packages/sms/
-  - php ocular.phar code-coverage:upload --format=php-clover tests/_log/coverage.xml
+  - composer install --prefer-source

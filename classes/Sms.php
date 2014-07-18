@@ -20,14 +20,15 @@ use InvalidArgumentException;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Sms extends \Forge
+class Sms extends \Facade
 {
 	protected static $_config = 'sms';
 
 	/**
 	 * {@inheritdocs}
 	 *
-	 * @param  string $gateway
+	 * @param string $gateway
+	 *
 	 * @return GatewayInterface
 	 */
 	public static function forge($instance = 'default')
@@ -45,9 +46,10 @@ class Sms extends \Forge
 	/**
 	 * Create a new message
 	 *
-	 * @param  mixed   $number
-	 * @param  string  $message
-	 * @param  mixed   $sender
+	 * @param mixed  $number
+	 * @param string $message
+	 * @param mixed  $sender
+	 *
 	 * @return Message
 	 */
 	public static function message($number, $message, $sender = null)

@@ -16,6 +16,7 @@ class SmsTest extends Test
 	public function _before()
 	{
 		Sms::_init();
+
 		\Config::set('sms.test', \Mockery::mock('Indigo\\Sms\\Gateway\\GatewayInterface'));
 	}
 	/**
