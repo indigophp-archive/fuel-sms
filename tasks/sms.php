@@ -18,6 +18,11 @@ namespace Fuel\Tasks;
  */
 class Sms
 {
+	/**
+	 * Gateway object
+	 *
+	 * @var Indigo\Sms\Gateway\GatewayInterface
+	 */
 	protected $gateway;
 
 	public function __construct()

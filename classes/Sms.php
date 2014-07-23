@@ -13,7 +13,6 @@ namespace Indigo\Fuel;
 
 use Indigo\Sms\Gateway\GatewayInterface;
 use Indigo\Sms\Message;
-use InvalidArgumentException;
 
 /**
  * Sms Facade class
@@ -24,14 +23,17 @@ class Sms extends \Facade
 {
 	use \Indigo\Core\Facade\Instance;
 
+	/**
+	 * {@inheritdoc}
+	 */
 	protected static $_config = 'sms';
 
 	/**
-	 * {@inheritdocs}
+	 * {@inheritdoc}
 	 *
 	 * @param string $gateway
 	 *
-	 * @return GatewayInterface
+	 * @return Indigo\Sms\Gateway\GatewayInterface
 	 */
 	public static function forge($instance = 'default')
 	{
@@ -39,7 +41,7 @@ class Sms extends \Facade
 
 		if ($gateway instanceof GatewayInterface === false)
 		{
-			throw new InvalidArgumentException('Invalid Gateway');
+			throw new \InvalidArgumentException('Invalid Gateway');
 		}
 
 		return static::newInstance($instance, $gateway);
@@ -52,7 +54,7 @@ class Sms extends \Facade
 	 * @param string $message
 	 * @param mixed  $sender
 	 *
-	 * @return Message
+	 * @return Indigo\Sms\Message
 	 */
 	public static function message($number, $message, $sender = null)
 	{

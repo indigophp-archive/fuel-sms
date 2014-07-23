@@ -10,6 +10,7 @@ use Codeception\TestCase\Test;
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  *
  * @coversDefaultClass Indigo\Fuel\Sms
+ * @group              Sms
  */
 class SmsTest extends Test
 {
@@ -21,7 +22,6 @@ class SmsTest extends Test
 	}
 	/**
 	 * @covers ::forge
-	 * @group  Sms
 	 */
 	public function testForge()
 	{
@@ -32,7 +32,6 @@ class SmsTest extends Test
 	/**
 	 * @covers            ::forge
 	 * @expectedException InvalidArgumentException
-	 * @group             Sms
 	 */
 	public function testForgeFailure()
 	{
@@ -41,7 +40,6 @@ class SmsTest extends Test
 
 	/**
 	 * @covers ::message
-	 * @group  Sms
 	 */
 	public function testMessage()
 	{
