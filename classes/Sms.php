@@ -33,7 +33,7 @@ class Sms extends \Facade
 	 *
 	 * @param string $gateway
 	 *
-	 * @return Indigo\Sms\Gateway\GatewayInterface
+	 * @return GatewayInterface
 	 */
 	public static function forge($instance = 'default')
 	{
@@ -54,7 +54,7 @@ class Sms extends \Facade
 	 * @param string $message
 	 * @param mixed  $sender
 	 *
-	 * @return Indigo\Sms\Message
+	 * @return Message
 	 */
 	public static function message($number, $message, $sender = null)
 	{
