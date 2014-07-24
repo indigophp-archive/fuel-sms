@@ -32,7 +32,7 @@ class Sms
 	}
 
 	/**
-	 * Send a message
+	 * Sends a message
 	 */
 	public function run($number, $message, $sender = null)
 	{
@@ -42,7 +42,7 @@ class Sms
 	}
 
 	/**
-	 * Get balance
+	 * Returns the balance
 	 *
 	 * @return float
 	 */
