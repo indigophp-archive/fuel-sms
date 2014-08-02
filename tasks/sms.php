@@ -9,40 +9,40 @@
  * file that was distributed with this source code.
  */
 
-namespace Fuel\Tasks;
+namespace Fuel\tasks;
 
 /**
  * Sms Task
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Sms
+class sms
 {
-	protected $gateway;
+    protected $gateway;
 
-	public function __construct()
-	{
-		$gateway = \Cli::option('gateway', \Cli::option('g'));
-		$this->gateway = \Sms::forge($gateway);
-	}
+    public function __construct()
+    {
+        $gateway = \Cli::option('gateway', \Cli::option('g'));
+        $this->gateway = \Sms::forge($gateway);
+    }
 
-	/**
+    /**
 	 * Send a message
 	 */
-	public function run($number, $message, $sender = null)
-	{
-		$message = \Sms::message($number, $message, $sender);
+    public function run($number, $message, $sender = null)
+    {
+        $message = \Sms::message($number, $message, $sender);
 
-		$this->gateway->send($message);
-	}
+        $this->gateway->send($message);
+    }
 
-	/**
+    /**
 	 * Get balance
 	 *
 	 * @return float
 	 */
-	public function balance()
-	{
-		return $this->gateway->getBalance();
-	}
+    public function balance()
+    {
+        return $this->gateway->getBalance();
+    }
 }

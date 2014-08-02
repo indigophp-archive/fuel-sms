@@ -22,30 +22,29 @@ use InvalidArgumentException;
  */
 class Sms extends \Facade
 {
-	use \Indigo\Core\Facade\Instance;
+    use \Indigo\Core\Facade\Instance;
 
-	protected static $_config = 'sms';
+    protected static $_config = 'sms';
 
-	/**
+    /**
 	 * {@inheritdocs}
 	 *
 	 * @param string $gateway
 	 *
 	 * @return GatewayInterface
 	 */
-	public static function forge($instance = 'default')
-	{
-		$gateway = \Config::get('sms.' . $instance);
+    public static function forge($instance = 'default')
+    {
+        $gateway = \Config::get('sms.' . $instance);
 
-		if ($gateway instanceof GatewayInterface === false)
-		{
-			throw new InvalidArgumentException('Invalid Gateway');
-		}
+        if ($gateway instanceof GatewayInterface === false) {
+            throw new InvalidArgumentException('Invalid Gateway');
+        }
 
-		return static::newInstance($instance, $gateway);
-	}
+        return static::newInstance($instance, $gateway);
+    }
 
-	/**
+    /**
 	 * Create a new message
 	 *
 	 * @param mixed  $number
@@ -54,8 +53,8 @@ class Sms extends \Facade
 	 *
 	 * @return Message
 	 */
-	public static function message($number, $message, $sender = null)
-	{
-		return new Message($number, $message, $sender);
-	}
+    public static function message($number, $message, $sender = null)
+    {
+        return new Message($number, $message, $sender);
+    }
 }
