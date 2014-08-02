@@ -13,40 +13,40 @@ use Codeception\TestCase\Test;
  */
 class SmsTest extends Test
 {
-	public function _before()
-	{
-		Sms::_init();
+    public function _before()
+    {
+        Sms::_init();
 
-		\Config::set('sms.test', \Mockery::mock('Indigo\\Sms\\Gateway\\GatewayInterface'));
-	}
-	/**
+        \Config::set('sms.test', \Mockery::mock('Indigo\\Sms\\Gateway\\GatewayInterface'));
+    }
+    /**
 	 * @covers ::forge
 	 * @group  Sms
 	 */
-	public function testForge()
-	{
-		$sms = Sms::forge('test');
-		$this->assertInstanceOf('Indigo\\Sms\\Gateway\\GatewayInterface', $sms);
-	}
+    public function testForge()
+    {
+        $sms = Sms::forge('test');
+        $this->assertInstanceOf('Indigo\\Sms\\Gateway\\GatewayInterface', $sms);
+    }
 
-	/**
+    /**
 	 * @covers            ::forge
 	 * @expectedException InvalidArgumentException
 	 * @group             Sms
 	 */
-	public function testForgeFailure()
-	{
-		$sms = Sms::forge('THIS_SHOULD_NEVER_EXIST');
-	}
+    public function testForgeFailure()
+    {
+        $sms = Sms::forge('THIS_SHOULD_NEVER_EXIST');
+    }
 
-	/**
+    /**
 	 * @covers ::message
 	 * @group  Sms
 	 */
-	public function testMessage()
-	{
-		$message = Sms::message(1234, 'Test');
+    public function testMessage()
+    {
+        $message = Sms::message(1234, 'Test');
 
-		$this->assertInstanceOf('Indigo\\Sms\\Message', $message);
-	}
+        $this->assertInstanceOf('Indigo\\Sms\\Message', $message);
+    }
 }
