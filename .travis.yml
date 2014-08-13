@@ -7,4 +7,3 @@ script: vendor/bin/codecept run
 
 before_script:
   - composer install
-  - composer create-project --prefer-source fuel/fuel:dev-1.8/develop /tmp/fuel
